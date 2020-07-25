@@ -24,14 +24,12 @@ h2 {
   font-family: "Roboto";
 }
 
-.header {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
+.course-create-action {
+  position: fixed;
+  bottom: 15px;
+  right: 15px;
+  z-index: 1;
 }
-
-
 
 .spinner-container {
   margin-top: 100px;

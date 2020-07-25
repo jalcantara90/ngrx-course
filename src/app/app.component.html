@@ -22,11 +22,18 @@
     <button class="menu-button" mat-icon-button (click)="start.open('mouse')">
       <mat-icon>menu</mat-icon>
     </button>
+
+    <div class="avatar-container" *ngIf="user$ | async as user">
+      <p>Welcome, {{ user.name }}</p>
+      <img class="avatar" [src]="user.img" alt="">
+    </div>
   </mat-toolbar>
 
   <div class="spinner-container" *ngIf="loading">
     <mat-spinner></mat-spinner>
   </div>
 
-  <router-outlet></router-outlet>
+  <div class="content">
+    <router-outlet></router-outlet>
+  </div>
 </mat-sidenav-container>

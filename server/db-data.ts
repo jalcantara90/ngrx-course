@@ -1,8 +1,10 @@
 export const USERS = {
   1: {
     id: 1,
-    email: 'test@angular-university.io',
-    password: 'test'
+    email: 'jalcantara@mail.com',
+    password: 'test',
+    img: 'https://pbs.twimg.com/profile_images/872745468115156992/JGulyXUY_400x400.jpg',
+    name: 'Jonathan'
   }
 
 };
@@ -616,12 +618,11 @@ export function findLessonsForCourse(courseId: number) {
   return Object.values(LESSONS).filter(lesson => lesson.courseId == courseId);
 }
 
-
 export function authenticate(email: string, password: string) {
 
-  const user: any = Object.values(USERS).find(user => user.email === email);
+  const user: any = Object.values(USERS).find(userData => userData.email === email);
 
-  if (user && user.password == password) {
+  if (user && user.password === password) {
     return user;
   } else {
     return undefined;

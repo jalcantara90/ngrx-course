@@ -15,11 +15,9 @@ export function compareLessons(l1:Lesson, l2: Lesson) {
 
   if (compareCourses > 0) {
     return 1;
-  }
-  else if (compareCourses < 0){
+  } else if (compareCourses < 0) {
     return -1;
-  }
-  else {
+  } else {
     return l1.seqNo - l2.seqNo;
   }
 

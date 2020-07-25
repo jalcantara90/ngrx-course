@@ -8,34 +8,33 @@ import {ReactiveFormsModule} from '@angular/forms';
 import {MatButtonModule} from '@angular/material/button';
 import { StoreModule } from '@ngrx/store';
 import {AuthService} from './auth.service';
-import * as fromAuth from './reducer';
 import {authReducer} from './reducer';
 import {AuthGuard} from './auth.guard';
 import {EffectsModule} from '@ngrx/effects';
 import {AuthEffects} from './auth.effects';
 
 @NgModule({
-    imports: [
-        CommonModule,
-        ReactiveFormsModule,
-        MatCardModule,
-        MatInputModule,
-        MatButtonModule,
-        RouterModule.forChild([{path: '', component: LoginComponent}]),
-        StoreModule.forFeature('auth', authReducer),
-        EffectsModule.forFeature([AuthEffects])
-    ],
-    declarations: [LoginComponent],
-    exports: [LoginComponent]
+  imports: [
+    CommonModule,
+    ReactiveFormsModule,
+    MatCardModule,
+    MatInputModule,
+    MatButtonModule,
+    RouterModule.forChild([{path: '', component: LoginComponent}]),
+    StoreModule.forFeature('auth', authReducer),
+    EffectsModule.forFeature([AuthEffects])
+  ],
+  declarations: [LoginComponent],
+  exports: [LoginComponent]
 })
 export class AuthModule {
-    static forRoot(): ModuleWithProviders<AuthModule> {
-        return {
-            ngModule: AuthModule,
-            providers: [
-              AuthService,
-                AuthGuard
-            ]
-        };
-    }
+  static forRoot(): ModuleWithProviders<AuthModule> {
+    return {
+      ngModule: AuthModule,
+      providers: [
+        AuthService,
+        AuthGuard
+      ]
+    };
+  }
 }
